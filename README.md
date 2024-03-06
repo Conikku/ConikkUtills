@@ -20,7 +20,7 @@
     local ConikkUtills = require(16646427669)
 ```
 
-## Documentation
+# Documentation
 ## TurnPositive
 ####  Returns a negative number as positive
 
@@ -95,7 +95,7 @@ else
 end
 ```
 #
-## Development
+# Development
 ##### Want to contribute? Send a pull request if there are any bugs!
 
 ## License
