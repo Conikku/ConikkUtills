@@ -2,9 +2,10 @@
 	My (Conikku's) personal library I use for most of my games.
   	Open sourced on Roblox and GitHub
   
-	Last Updated: 03/1/2024
+	Last Updated: 03/6/2024
 ]]
 
+local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local IsStudio = RunService:IsStudio()
 
@@ -42,6 +43,15 @@ function ConikkUtills:StudioOnlyError(string : string, level : number?)
 	if IsStudio then
 		error(string, level)
 	end
+end
+
+function ConikkUtills:GetPlayerThumbnail(player : Player, ThumbnailType : Enum.ThumbnailType, ThumbnailSize : Enum.ThumbnailSize)
+	local userId = player.UserId
+	local thumbType = ThumbnailType
+	local thumbSize = ThumbnailSize
+	local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+	
+	return content
 end
 
 return ConikkUtills
