@@ -1,6 +1,6 @@
 # ConikkUtills
-### My own personal LUAU utility module
-### It's very bare bones atm and I plan to add on to it overtime
+#### My own personal LUAU utility module
+#### It's very bare bones atm and I plan to add on to it overtime
 
 
 [![Roblox](https://conikku.neocities.org/github%20assets/POWERED%20by%20roblox.png)](https://www.roblox.com)
