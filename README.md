@@ -27,7 +27,7 @@
 print(ConikkUtills:TurnPositive(-8)) --> 8
 print(ConikkUtills:TurnPositive(27)) --> 27
 ```
-
+#
 ## NumbersMagnitude
 #### Returns the magnitude length of two numbers
 
@@ -36,7 +36,7 @@ print(ConikkUtills:NumbersMagnitude(1, 80)) --> 79
 print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 ```
-
+#
 ## RoundToNearestInteger
 #### Round a decimal to the nearest integer
 
@@ -45,7 +45,7 @@ print(ConikkUtills:RoundToNearestInteger(0.365)) --> 0
 print(ConikkUtills:RoundToNearestInteger(0.683)) --> 1
 print(ConikkUtills:RoundToNearestInteger(0.975)) --> 1
 ```
-
+#
 ## RoundToFarthestInteger
 #### Round a decimal to the farthest integer
 
@@ -54,7 +54,7 @@ print(ConikkUtills:RoundToFarthestInteger(0.365)) --> -0
 print(ConikkUtills:RoundToFarthestInteger(0.683)) --> 1
 print(ConikkUtills:RoundToFarthestInteger(0.975)) --> 1
 ```
-
+#
 ## StudioOnlyPrint
 #### Prints in Studio only
 
@@ -67,7 +67,7 @@ else
    ConikkUtills:StudioOnlyPrint("I only print in Studio >:)")
 end
 ```
-
+#
 ## StudioOnlyWarn
 #### Warns in Studio only
 
@@ -80,7 +80,7 @@ else
     ConikkUtills:StudioOnlyWarn("I only warn in Studio >:D")
 end
 ```
-
+#
 ## StudioOnlyError
 #### Error in Studio only
 
@@ -93,7 +93,7 @@ else
     ConikkUtills:StudioOnlyError("I only error in Studio >:3")
 end
 ```
-
+#
 ## Development
 ##### Want to contribute? Send a pull request if there are any bugs!
 
