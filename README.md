@@ -4,7 +4,7 @@ My own personal LuaU utility module I use in almost all of my games, It's very b
 
 [![Roblox](https://conikku.neocities.org/github%20assets/POWERED%20by%20roblox.png)](https://www.roblox.com)
 
-[![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://www.conikku.com)
+[![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://conikku.lao.ooo/)
 
 # Installation
  You can get the Module [here](https://www.roblox.com/library/16646427669/)
