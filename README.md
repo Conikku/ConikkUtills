@@ -1,10 +1,13 @@
 # ConikkUtills
-My own personal LuaU utility module I use in almost all of my games, It's very bare bones atm and I plan to add on to it overtime
-
+My own personal LUAU utility module I use in almost all of my games, It's very bare bones atm and I plan to add on to it overtime.
 
 [![Roblox](https://conikku.neocities.org/github%20assets/POWERED%20by%20roblox.png)](https://www.roblox.com)
 
 [![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://conikku.lao.ooo/)
+
+### ⚠️**NOTICE**⚠️
+### This module uses some open source modules on roblox from other creators of the community which will **NOT** have their code included on this github page, they will be in the module on the roblox site
+
 
 # Installation
  You can get the Module [here](https://www.roblox.com/library/16646427669/)
@@ -20,38 +23,47 @@ local ConikkUtills = require(16646427669)
 ```
 
 # Documentation
-### TurnPositive(n : number) | Returns a negative number as positive
+## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize) | Get a Player's Thumbnail
+
+```lua
+local Player = game:GetService("Players").LocalPlayer
+local Decal = workspace.Part.Decal
+
+Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+```
+
+## TurnPositive(n : number) | Returns a negative number as positive
 
 ```lua
 print(ConikkUtills:TurnPositive(-8)) --> 8
 print(ConikkUtills:TurnPositive(27)) --> 27
 ```
-#
-### NumbersMagnitude(N1 : number, N2 : number) | Returns the magnitude length of two numbers
+
+## NumbersMagnitude(N1 : number, N2 : number) | Returns the magnitude length of two numbers
 
 ```lua
 print(ConikkUtills:NumbersMagnitude(1, 80)) --> 79
 print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 ```
-#
-### RoundToNearestInteger(n : number) | Round a decimal to the nearest integer
+
+## Round:ToNearestInteger(n : number) | Round a decimal to the nearest integer
 
 ```lua
-print(ConikkUtills:RoundToNearestInteger(0.365)) --> 0
-print(ConikkUtills:RoundToNearestInteger(0.683)) --> 1
-print(ConikkUtills:RoundToNearestInteger(0.975)) --> 1
+print(ConikkUtills.Round:ToNearestInteger(0.365)) --> 0
+print(ConikkUtills.Round:ToNearestInteger(0.683)) --> 1
+print(ConikkUtills.Round:ToNearestInteger(0.975)) --> 1
 ```
-#
-### RoundToFarthestInteger(n : number) | Round a decimal to the farthest integer
+
+## Round:ToFarthestInteger(n : number) | Round a decimal to the farthest integer
 
 ```lua
-print(ConikkUtills:RoundToFarthestInteger(0.365)) --> -0
-print(ConikkUtills:RoundToFarthestInteger(0.683)) --> 1
-print(ConikkUtills:RoundToFarthestInteger(0.975)) --> 1
+print(ConikkUtills.Round:ToFarthestInteger(0.365)) --> -0
+print(ConikkUtills.Round:ToFarthestInteger(0.683)) --> 1
+print(ConikkUtills.Round:ToFarthestInteger(0.975)) --> 1
 ```
-#
-### StudioOnlyPrint(string : string) | Prints in Studio only
+
+## StudioOnly:Print(string : string) | Prints in Studio only
 
 ```lua
 local Num = math.random(1, 2)
@@ -59,11 +71,11 @@ local Num = math.random(1, 2)
 if num == 1 then
     print("I print in both RobloxPlayer and Roblox Studio :)")
 else
-   ConikkUtills:StudioOnlyPrint("I only print in Studio >:)")
+   ConikkUtills.StudioOnly:Print("I only print in Studio >:)")
 end
 ```
-#
-### StudioOnlyWarn(string : string) | Warns in Studio only
+
+## StudioOnly:Warn(string : string) | Warns in Studio only
 
 ```lua
 local Num = math.random(1, 2)
@@ -71,11 +83,11 @@ local Num = math.random(1, 2)
 if num == 1 then
     warn("I warn in both RobloxPlayer and Roblox Studio :D")
 else
-    ConikkUtills:StudioOnlyWarn("I only warn in Studio >:D")
+    ConikkUtills.StudioOnly:Warn("I only warn in Studio >:D")
 end
 ```
-#
-### StudioOnlyError(string : string, level : number?) | Errors in Studio only
+
+## StudioOnly:Error(string : string, level : number?) | Errors in Studio only
 
 ```lua
 local Num = math.random(1, 2)
@@ -83,17 +95,50 @@ local Num = math.random(1, 2)
 if num == 1 then
     error("I error in both RobloxPlayer and Roblox Studio :3", 1)
 else
-    ConikkUtills:StudioOnlyError("I only error in Studio >:3")
+    ConikkUtills.StudioOnly:Error("I only error in Studio >:3")
 end
 ```
-#
-### GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize) | Get a Player's Thumbnail
 
+# ContextActionUtility
+### For in depth documentation and other infomation vist this [devfourm post](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
+
+## Functions
 ```lua
-local Player = game:GetService("Players").LocalPlayer
-local Decal = workspace.Part.Decal
+ConikkUtills.ContextActionUtility:BindAction(actionName : string, functionToBind : any , createTouchButton : boolean, ...)
 
-Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+ConikkUtills.ContextActionUtility:UnbindAction(actionName : string)
+
+ConikkUtills.ContextActionUtility:BindActionAtPriority(actionName : string, functionToBind : any , createTouchButton : boolean, priorityLevel : any, ...)
+
+ConikkUtills.ContextActionUtility:DisableAction(actionName : string, effectList)
+
+ConikkUtills.ContextActionUtility:SetImage(actionName : string, image : string)
+
+ConikkUtills.ContextActionUtility:SetTitle(actionName : string, title : string)
+
+ConikkUtills.ContextActionUtility:GetButton(actionName : string)
+
+ConikkUtills.ContextActionUtility:MakeButtonRound(actionName : string, amount : number)
+
+ConikkUtills.ContextActionUtility:MakeButtonSquare(actionName : string)
+
+ConikkUtills.ContextActionUtility:SetPressedColor(actionName : string, color : Color3)
+
+ConikkUtills.ContextActionUtility:SetReleasedColor(actionName : string, color : Color3)
+```
+
+## Events
+```lua
+local Equipped = ConikkUtills.ContextActionUtility.LocalToolEquipped()
+local Unequipped = ConikkUtills.ContextActionUtility.LocalToolUnequipped()
+```
+
+### Refrences:
+```lua
+Equipped:Connect()
+Equipped:Wait()
+Equipped:ConnectParallel()
+Equipped:Once()
 ```
 #
 # Development
