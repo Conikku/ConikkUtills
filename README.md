@@ -118,7 +118,7 @@ fade.Out.Completed:Wait()
 print("Fade Out Completed")
 ```
 #
-## ConikkUtills.Input:AnyKey() 
+## Input:AnyKey() 
 ### RbxScriptConnect that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
 - Escape Key
 - Pause Key
@@ -142,7 +142,7 @@ print("Pressed a key for the first time")
 AnyKey:Connect(Pressed)
 ```
 #
-## ConikkUtills.Input:GetPlatform() -> string 
+## Input:GetPlatform() -> string 
 ### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
 ```lua
 local Platform = ConikkUtills.Input:GetPlatform()
@@ -154,7 +154,7 @@ else
 end
 ```
 #
-## ConikkUtills.Input:IsController() -> boolean 
+## Input:IsController() -> boolean 
 ### Checks if Gamepad is connected and enabled
 ```lua
 local IsController = ConikkUtills.Input:IsController()
@@ -166,7 +166,7 @@ else
 end
 ```
 #
-## ConikkUtills.Input:IsVR() -> boolean
+## Input:IsVR() -> boolean
 ### Checks if user is in VR
 ```lua
 local IsVR = ConikkUtills.Input:IsVR()
@@ -178,7 +178,7 @@ else
 end
 ```
 #
-## ConikkUtills.Input:GetEnabled() -> string
+## Input:GetEnabled() -> string
 ### Returns main UserInputType control that is Enabled, this includes:
 - KeyboardEnabled : "Keyboard"
 - GamepadEnabled : "Gamepad"
