@@ -8,8 +8,6 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 ### ⚠️**NOTICE**⚠️
 ### This module uses some open source modules on roblox from other creators of the community which will **NOT** have their code included on this github page, they will be in the module on the roblox site
 
-### If you are requiring this script on the server, make sure to modify the ContextActionUtility Module to have ```if game:GetService("RunService"):IsServer then return end ``` anywhere before line 123 (where it's getting the local player) as you cant get the local player on the server
-
 
 # Installation
  You can get the Module [here](https://www.roblox.com/library/16646427669/)
@@ -96,36 +94,135 @@ else
     ConikkUtills.StudioOnly:Error("I only error in Studio >:3")
 end
 ```
+## ScreenEffects:Fade():Start:(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?)
+- If ```InSpeed``` is set to ```nil```, the fade in will **instantly** make the screen black, then fade out
+- If ```OutSpeed``` is set to ```nil```, then it will **instantly** get rid of the fade once it **completes**
+- If ```DisplayOrder``` is ```nil```, its set to **99999** by default
 
-# ContextActionUtility
-### For in depth documentation and other infomation vist this [devfourm post](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
+#### If you call a fade like this:
+```lua
+local fade = ConikkUtills:ScreenEffects:Fade():Start(1, 1)
+```
+#### You can call RBXScriptSignals and/or read TweenBase read only properties from ```fade.In``` and/or ```fade.Out``` if InSpeed and/or OutSpeed are not nil
+### Here's a example of what you can do with this
 
-## Functions
+```lua
+local ConikkUtills = require(game.ReplicatedStorage.ConikkUtills)
+local fade = ConikkUtills.ScreenEffects:Fade()
+
+fade:Start(0.5, 1)
+
+fade.In.Completed:Wait()
+print("Fade In Completed")
+fade.Out.Completed:Wait()
+print("Fade Out Completed")
+```
+#
+## ConikkUtills.Input:AnyKey() 
+### RbxScriptConnect that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
+- Escape Key
+- Pause Key
+- Thumbstick1
+- Thumbstick2
+- Mouse Movement
+- Gyro
+- Accelermeter
+
+### Here's a script example to show what it can be used for, I usually use this for title screens
+```lua
+local AnyKey = ConikkUtills.Input:AnyKey
+
+function Pressed()
+    print("Pressed a key")
+end
+
+AnyKey:Wait()
+print("Pressed a key for the first time")
+
+AnyKey:Connect(Pressed)
+```
+#
+## ConikkUtills.Input:GetPlatform() -> string 
+### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
+```lua
+local Platform = ConikkUtills.Input:GetPlatform()
+
+if Platform == "Mobile" then
+    print("User is on mobile")
+else
+    print("User is not mobile")
+end
+```
+#
+## ConikkUtills.Input:IsController() -> boolean 
+### Checks if Gamepad is connected and enabled
+```lua
+local IsController = ConikkUtills.Input:IsController()
+
+if IsController == true then
+    print("Controller connected")
+else
+    print("No controller connected")
+end
+```
+#
+## ConikkUtills.Input:IsVR() -> boolean
+### Checks if user is in VR
+```lua
+local IsVR = ConikkUtills.Input:IsVR()
+
+if IsVR == true then
+    print("User is in VR")
+else
+    print("User is not in VR")
+end
+```
+#
+## ConikkUtills.Input:GetEnabled() -> string
+### Returns main UserInputType control that is Enabled, this includes:
+- KeyboardEnabled : "Keyboard"
+- GamepadEnabled : "Gamepad"
+- TouchEnabled : "Touch"
+
+## ContextActionUtility
+#### For in depth documentation and other infomation vist this [devfourm post](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
+
+### Functions
 ```lua
 ConikkUtills.ContextActionUtility:BindAction(actionName : string, functionToBind : any , createTouchButton : boolean, ...)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:UnbindAction(actionName : string)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:BindActionAtPriority(actionName : string, functionToBind : any , createTouchButton : boolean, priorityLevel : any, ...)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:DisableAction(actionName : string, effectList)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:SetImage(actionName : string, image : string)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:SetTitle(actionName : string, title : string)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:GetButton(actionName : string)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:MakeButtonRound(actionName : string, amount : number)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:MakeButtonSquare(actionName : string)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:SetPressedColor(actionName : string, color : Color3)
-
+```
+```lua
 ConikkUtills.ContextActionUtility:SetReleasedColor(actionName : string, color : Color3)
 ```
 
-## Events
+### Events
 ```lua
 local Equipped = ConikkUtills.ContextActionUtility.LocalToolEquipped()
 local Unequipped = ConikkUtills.ContextActionUtility.LocalToolUnequipped()
@@ -138,6 +235,22 @@ Equipped:Wait()
 Equipped:ConnectParallel()
 Equipped:Once()
 ```
+#
+## LightingAPIProfile
+- For in depth documentation and other infomation vist this [github repository](https://github.com/hexa0/lighting-profile)
+- This was made by my friend Hexa and I integraded it into my system, it's really good for changing lighting in game very easily
+### Functions
+```lua
+ConikkUtills.LightingProfile:ApplyProfile()
+```
+```lua
+ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting()
+```
+#
+# Credits
+- [ContextActionUtility](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
+- [DeviceMaid](https://create.roblox.com/store/asset/7907463241/Device-Maid-Support-Module?externalSource=www)
+- [LightingAPIProfile](https://github.com/hexa0/lighting-profile)
 #
 # Development
 Want to contribute? Send a pull request if there are any bugs!
