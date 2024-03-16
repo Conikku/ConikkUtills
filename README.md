@@ -108,9 +108,7 @@ local fade = ConikkUtills:ScreenEffects:Fade():Start(1, 1)
 
 ```lua
 local ConikkUtills = require(game.ReplicatedStorage.ConikkUtills)
-local fade = ConikkUtills.ScreenEffects:Fade()
-
-fade:Start(0.5, 1)
+local fade = ConikkUtills.ScreenEffects:Fade():Start(0.5, 1)
 
 fade.In.Completed:Wait()
 print("Fade In Completed")
