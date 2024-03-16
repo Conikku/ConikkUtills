@@ -14,14 +14,10 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 # Installation
  You can get the Module [here](https://www.roblox.com/library/16646427669/)
 
-## Requirement Examples
+## Requirement Example
 
 ```lua
 local ConikkUtills = require(game:GetService("ReplicatedStorage").ConikkUtills)
-```
-
-```lua
-local ConikkUtills = require(16646427669) -- ONLY DO THIS ON CLIENT BECAUSE YOU WON'T BE ABLE TO EDIT CONTEXTACTIONUTILITY WHEN NEEDED ON SERVER
 ```
 
 # Documentation
