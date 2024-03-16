@@ -21,7 +21,7 @@ local ConikkUtills = require(game:GetService("ReplicatedStorage").ConikkUtills)
 ```
 
 ```lua
-local ConikkUtills = require(16646427669)
+local ConikkUtills = require(16646427669) -- ONLY DO THIS ON CLIENT BECAUSE YOU WON'T BE ABLE TO EDIT CONTEXTACTIONUTILITY WHEN NEEDED ON SERVER
 ```
 
 # Documentation
