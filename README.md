@@ -8,6 +8,8 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 ### ⚠️**NOTICE**⚠️
 ### This module uses some open source modules on roblox from other creators of the community which will **NOT** have their code included on this github page, they will be in the module on the roblox site
 
+### If you are requiring this script on the server, make sure to modify the ContextActionUtility Module to have ```if game:GetService("RunService"):IsServer then return end ``` anywhere before line 123 (where it's getting the local player) as you cant get the local player on the server
+
 
 # Installation
  You can get the Module [here](https://www.roblox.com/library/16646427669/)
