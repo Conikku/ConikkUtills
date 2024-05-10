@@ -94,10 +94,16 @@ else
     ConikkUtills.StudioOnly:Error("I only error in Studio >:3")
 end
 ```
-## ScreenEffects:Fade():Start:(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?)
+## ScreenEffects:Fade():Start:(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?, Color : Color3?)
 - If ```InSpeed``` is set to ```nil```, the fade in will **instantly** make the screen black, then fade out
 - If ```OutSpeed``` is set to ```nil```, then it will **instantly** get rid of the fade once it **completes**
 - If ```DisplayOrder``` is ```nil```, its set to **99999** by default
+- If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
+
+## ScreenEffects:WipeFade():Start:(Speed : number?, DisplayOrder : number?, Color : Color3?)
+- If ```Speed``` is set to ```nil```, by default it will be (0.65 x 2)
+- If ```DisplayOrder``` is ```nil```, its set to **99999** by default
+- If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
 
 #### If you call a fade like this:
 ```lua
