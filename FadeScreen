@@ -1,6 +1,6 @@
 --[[
 	Made by Conikku
-	Last Updated: 03/16/2024
+	Last Updated: 05/10/2024
 ]]
 
 local FadeScreen = {}
@@ -10,7 +10,7 @@ local TweenService = game:GetService("TweenService")
 
 FadeScreen.Fading = { }
 
-function FadeScreen:Start(InSpeed : number | nil, OutSpeed : number | nil, DisplayOrder : number | nil)
+function FadeScreen:Start(InSpeed : number | nil, OutSpeed : number | nil, DisplayOrder : number | nil, Color : Color3 | nil)
 	task.spawn(function()
 		
 		DisplayOrder = DisplayOrder or 99999
@@ -22,7 +22,13 @@ function FadeScreen:Start(InSpeed : number | nil, OutSpeed : number | nil, Displ
 
 		local Frame = Instance.new("Frame")
 		Frame.Size = UDim2.new(1, 0, 1, 0)
-		Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		
+		if Color == nil then
+			Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)	
+		else
+			Frame.BackgroundColor3 = Color
+		end
+		
 		Frame.BackgroundTransparency = 1
 		Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 		Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
