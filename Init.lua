@@ -5,7 +5,7 @@
 	For Documentation:
   	https://github.com/Conikku/ConikkUtills
 	
-	Last Updated: 03/16/2024
+	Last Updated: 05/10/2024
 ]]
 
 local Players = game:GetService("Players")
@@ -16,19 +16,20 @@ local IsStudio = RunService:IsStudio()
 
 -- My own Modules
 local AnyKey
-local Fade
+local Fade , FadeWipe
 
 -- Third Party Open Source Modules
-local LightingProfile = require(script:WaitForChild("LightingProfileAPI", 10))
+local LightingProfile = require(script.LightingProfileAPI)
 local ContextActionUtility
 local DeviceMaid
 
 if IsServer == false then
-	AnyKey = require(script:WaitForChild("AnyKey", 10))
-	Fade = require(script:WaitForChild("FadeScreen", 10))
+	AnyKey = require(script.AnyKey)
+	Fade = require(script.FadeScreen)
+	FadeWipe = require(script.FadeWipeTransition)
 	
-	DeviceMaid = require(script:WaitForChild("DeviceMaid", 10))
-	ContextActionUtility = require(script:WaitForChild("ContextActionUtility", 10))	
+	DeviceMaid = require(script.DeviceMaid)
+	ContextActionUtility = require(script.ContextActionUtility)	
 end
 
 -----------------
@@ -97,6 +98,10 @@ end
 
 function ConikkUtills.ScreenEffects:Fade()
 	ClientOnlyCheck() return Fade
+end
+
+function ConikkUtills.ScreenEffects:WipeFade()
+	ClientOnlyCheck() return FadeWipe
 end
 
 function ConikkUtills.Input:AnyKey()
