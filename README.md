@@ -14,14 +14,14 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 
 ## Requirement Example
 
-```lua
+```luau
 local ConikkUtills = require(game:GetService("ReplicatedStorage").ConikkUtills)
 ```
 
 # Documentation
 ## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize) | Get a Player's Thumbnail
 
-```lua
+```luau
 local Player = game:GetService("Players").LocalPlayer
 local Decal = workspace.Part.Decal
 
@@ -30,14 +30,14 @@ Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadS
 
 ## TurnPositive(n : number) | Returns a negative number as positive
 
-```lua
+```luau
 print(ConikkUtills:TurnPositive(-8)) --> 8
 print(ConikkUtills:TurnPositive(27)) --> 27
 ```
 
 ## NumbersMagnitude(N1 : number, N2 : number) | Returns the magnitude length of two numbers
 
-```lua
+```luau
 print(ConikkUtills:NumbersMagnitude(1, 80)) --> 79
 print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
@@ -45,7 +45,7 @@ print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 
 ## Round:ToNearestInteger(n : number) | Round a decimal to the nearest integer
 
-```lua
+```luau
 print(ConikkUtills.Round:ToNearestInteger(0.365)) --> 0
 print(ConikkUtills.Round:ToNearestInteger(0.683)) --> 1
 print(ConikkUtills.Round:ToNearestInteger(0.975)) --> 1
@@ -53,7 +53,7 @@ print(ConikkUtills.Round:ToNearestInteger(0.975)) --> 1
 
 ## Round:ToFarthestInteger(n : number) | Round a decimal to the farthest integer
 
-```lua
+```luau
 print(ConikkUtills.Round:ToFarthestInteger(0.365)) --> -0
 print(ConikkUtills.Round:ToFarthestInteger(0.683)) --> 1
 print(ConikkUtills.Round:ToFarthestInteger(0.975)) --> 1
@@ -61,7 +61,7 @@ print(ConikkUtills.Round:ToFarthestInteger(0.975)) --> 1
 
 ## StudioOnly:Print(string : string) | Prints in Studio only
 
-```lua
+```luau
 local Num = math.random(1, 2)
 
 if num == 1 then
@@ -73,7 +73,7 @@ end
 
 ## StudioOnly:Warn(string : string) | Warns in Studio only
 
-```lua
+```luau
 local Num = math.random(1, 2)
 
 if num == 1 then
@@ -85,7 +85,7 @@ end
 
 ## StudioOnly:Error(string : string, level : number?) | Errors in Studio only
 
-```lua
+```luau
 local Num = math.random(1, 2)
 
 if num == 1 then
@@ -106,13 +106,13 @@ end
 - If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
 
 #### If you call a fade like this:
-```lua
+```luau
 local fade = ConikkUtills:ScreenEffects:Fade():Start(1, 1)
 ```
 #### You can call RBXScriptSignals and/or read TweenBase read only properties from ```fade.In``` and/or ```fade.Out``` if InSpeed and/or OutSpeed are not nil
 ### Here's a example of what you can do with this
 
-```lua
+```luau
 -- Method 1:
 local fade = ConikkUtills.ScreenEffects:Fade():Start(0.5, 1)
 
@@ -121,7 +121,7 @@ print("Fade In Completed")
 fade.Out.Completed:Wait()
 print("Fade Out Completed")
 ```
-```lua
+```luau
 -- Method 2:
 local fade = ConikkUtills.ScreenEffects:Fade()
 
@@ -144,7 +144,7 @@ print("Fade Out Completed")
 - Accelermeter
 
 ### Here's a script example to show what it can be used for, I usually use this for title screens
-```lua
+```luau
 local AnyKey = ConikkUtills.Input:AnyKey
 
 function Pressed()
@@ -159,7 +159,7 @@ AnyKey:Connect(Pressed)
 #
 ## Input:GetPlatform() -> string 
 ### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
-```lua
+```luau
 local Platform = ConikkUtills.Input:GetPlatform()
 
 if Platform == "Mobile" then
@@ -171,7 +171,7 @@ end
 #
 ## Input:IsController() -> boolean 
 ### Checks if Gamepad is connected and enabled
-```lua
+```luau
 local IsController = ConikkUtills.Input:IsController()
 
 if IsController == true then
@@ -183,7 +183,7 @@ end
 #
 ## Input:IsVR() -> boolean
 ### Checks if user is in VR
-```lua
+```luau
 local IsVR = ConikkUtills.Input:IsVR()
 
 if IsVR == true then
@@ -203,48 +203,48 @@ end
 #### For in depth documentation and other infomation vist this [devfourm post](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
 
 ### Functions
-```lua
+```luau
 ConikkUtills.ContextActionUtility:BindAction(actionName : string, functionToBind : any , createTouchButton : boolean, ...)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:UnbindAction(actionName : string)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:BindActionAtPriority(actionName : string, functionToBind : any , createTouchButton : boolean, priorityLevel : any, ...)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:DisableAction(actionName : string, effectList)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:SetImage(actionName : string, image : string)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:SetTitle(actionName : string, title : string)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:GetButton(actionName : string)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:MakeButtonRound(actionName : string, amount : number)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:MakeButtonSquare(actionName : string)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:SetPressedColor(actionName : string, color : Color3)
 ```
-```lua
+```luau
 ConikkUtills.ContextActionUtility:SetReleasedColor(actionName : string, color : Color3)
 ```
 
 ### Events
-```lua
+```luau
 local Equipped = ConikkUtills.ContextActionUtility.LocalToolEquipped()
 local Unequipped = ConikkUtills.ContextActionUtility.LocalToolUnequipped()
 ```
 
 ### Refrences:
-```lua
+```luau
 Equipped:Connect()
 Equipped:Wait()
 Equipped:ConnectParallel()
@@ -255,10 +255,10 @@ Equipped:Once()
 - For in depth documentation and other infomation vist this [github repository](https://github.com/hexa0/lighting-profile)
 - This was made by my friend Hexa and I integraded it into my system, it's really good for changing lighting in game very easily
 ### Functions
-```lua
+```luau
 ConikkUtills.LightingProfile:ApplyProfile()
 ```
-```lua
+```luau
 ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting()
 ```
 #
