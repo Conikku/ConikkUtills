@@ -19,6 +19,7 @@ function FadeScreen:Start(InSpeed : number | nil, OutSpeed : number | nil, Displ
 		FadeEffect.Name = "Fade_Effect"
 		FadeEffect.IgnoreGuiInset = true
 		FadeEffect.DisplayOrder = DisplayOrder
+		FadeEffect.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 		local Frame = Instance.new("Frame")
 		Frame.Size = UDim2.new(1, 0, 1, 0)
