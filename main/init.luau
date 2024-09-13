@@ -58,7 +58,7 @@ ConikkUtills.ScreenEffects = { }
 -----------------
 
 --== Other
-function ConikkUtills:GetPlayerThumbnail(playerIdentifier : Player|number, ThumbnailType : Enum.ThumbnailType, ThumbnailSize : Enum.ThumbnailSize): (string?, boolean?)
+function ConikkUtills:GetPlayerThumbnail(playerIdentifier : Player|number, thumbnailType : Enum.ThumbnailType, thumbnailSize : Enum.ThumbnailSize): (string?, boolean?)
 	local userId = if type(playerIdentifier) == "number" then playerIdentifier else playerIdentifier.UserId
 	local content, isReady = Players:GetUserThumbnailAsync(userId, ThumbnailType, ThumbnailSize)
 
@@ -71,8 +71,8 @@ do
 		return math.abs(n)
 	end
 
-	function ConikkUtills.Number:NumbersMagnitude(N1 : number, N2 : number): number
-		return math.abs(N1 - N2)
+	function ConikkUtills.Number:NumbersMagnitude(n1 : number, n2 : number): number
+		return math.abs(n1 - n2)
 	end
 
 	function ConikkUtills.Number:CarryNumberToNewRange(n: number, oldRange: NumberRange|{Min: number, Max: number}, newRange: NumberRange|{Min: number, Max: number}): number
@@ -203,8 +203,8 @@ end
 
 --== Lighting Profile
 do
-	function ConikkUtills.LightingProfile:ApplyProfile(Configuration : Configuration | LightingProfile.ProfileData)
-		LightingProfile:ApplyProfile(Configuration)
+	function ConikkUtills.LightingProfile:ApplyProfile(configuration : Configuration | LightingProfile.ProfileData)
+		LightingProfile:ApplyProfile(configuration)
 	end
 
 	function ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting()
