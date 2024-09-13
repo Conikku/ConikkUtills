@@ -10,7 +10,7 @@ local Excluded = {
 		[3] = Enum.KeyCode.Thumbstick1,
 		[4] = Enum.KeyCode.Thumbstick2,
 	},
-
+	
 	UIT = {
 		[1] = Enum.UserInputType.MouseMovement,
 		[2] = Enum.UserInputType.Gyro,
@@ -33,7 +33,7 @@ UIS.InputBegan:Connect(function(input, gameProccesed)
 	local InputType, KeyCode = input.UserInputType, input.KeyCode
 
 	local Key, UIT = Excluded.KeyCodes, Excluded.UIT
-
+	
 	if KeyCode == Key[1] or KeyCode == Key[2] or KeyCode == Key[3] or KeyCode == Key[4] then
 		return
 	end
