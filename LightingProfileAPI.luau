@@ -1,4 +1,12 @@
 --!nocheck
+--[[
+	This module was NOT created by Conikku.
+	ORIGINAL:
+	https://github.com/hexa0/lighting-profile
+	
+	ORIGINAL CREATORS PROFILE:
+	https://github.com/hexa0
+]]
 
 local Lighting = game:GetService("Lighting")
 local Terrain = workspace:FindFirstChildOfClass("Terrain")
