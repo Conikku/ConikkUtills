@@ -1,4 +1,17 @@
 --[[
+▪ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧
+
+	▪ Written by PseudoPerson
+		▪ https://www.roblox.com/users/1735621911/profile
+	▪ CC BY License (https://creativecommons.org/licenses/by/4.0)
+		▪ Summary: Do what ever you want with the module as long as credit is in the code :)
+	▪ Developer Forum Post: https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219
+	▪ Cancel UserInputState may not always fire. This is untested.
+
+
+████████████████████████████████████████████████████████████╗
+╚═══════════════════════════════════════════════════════════╝
+
 ContextActionUtility!
 
 ▪ 𝐂𝐨𝐧𝐭𝐞𝐱𝐭𝐀𝐜𝐭𝐢𝐨𝐧𝐔𝐭𝐢𝐥𝐢𝐭𝐲 𝐀𝐏𝐈
@@ -28,19 +41,6 @@ ContextActionUtility!
 	▪ Events
 		▪ LocalToolEquipped(Instance toolEquipped)
 		▪ LocalToolUnequipped(Instance toolUnequipped)
-
-
-████████████████████████████████████████████████████████████╗
-╚═══════════════════════════════════════════════════════════╝
-
-▪ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧
-
-	▪ Written by PseudoPerson
-		▪ https://www.roblox.com/users/1735621911/profile
-	▪ CC BY License (https://creativecommons.org/licenses/by/4.0)
-		▪ Summary: Do what ever you want with the module as long as credit is in the code :)
-	▪ Developer Forum Post: https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219
-	▪ Cancel UserInputState may not always fire. This is untested.
 
 
 ████████████████████████████████████████████████████████████╗
