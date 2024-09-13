@@ -20,7 +20,7 @@ local Fade , FadeWipe
 
 -- Third Party Open Source Modules
 local LightingProfile = require(script.LightingProfileAPI)
-local ContextActionUtility = require(script.ContextActionUtility)
+local ContextActionUtility
 local DeviceMaid
 
 if IsServer == false then
