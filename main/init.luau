@@ -5,7 +5,7 @@
 	For Documentation:
   	https://github.com/Conikku/ConikkUtills
 	
-	Last Updated: 05/10/2024
+	Last Updated: 00/00/0000
 ]]
 
 local Players = game:GetService("Players")
@@ -14,22 +14,24 @@ local RunService = game:GetService("RunService")
 local IsServer = RunService:IsServer()
 local IsStudio = RunService:IsStudio()
 
+local Directory = script.Parent.ConikkUtills --Change this path to wherever you put the modules inside "ConikkUtills" at.
+
 -- My own Modules
 local AnyKey
 local Fade , FadeWipe
 
 -- Third Party Open Source Modules
-local LightingProfile = require(script.LightingProfileAPI)
+local LightingProfile = require(Directory.LightingProfileAPI)
 local ContextActionUtility
 local DeviceMaid
 
 if IsServer == false then
-	AnyKey = require(script.AnyKey)
-	Fade = require(script.FadeScreen)
-	FadeWipe = require(script.FadeWipeTransition)
+	AnyKey = require(Directory.AnyKey)
+	Fade = require(Directory.FadeScreen)
+	FadeWipe = require(Directory.FadeWipeTransition)
 
-	DeviceMaid = require(script.DeviceMaid)
-	ContextActionUtility = require(script.ContextActionUtility)	
+	DeviceMaid = require(Directory.DeviceMaid)
+	ContextActionUtility = require(Directory.ContextActionUtility)	
 end
 
 -----------------
