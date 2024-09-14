@@ -120,10 +120,10 @@ end
 ### Returns the "FadeScreen" or "FadeWipeTransition" module
 ```luau
 FadeScreen || FadeWipeTransition = {
-    Start: function,
-    Fading: {
-        In: Tween?,
-        Out: Tween?
+    Start : function,
+    Fading : {
+        In : Tween?,
+        Out : Tween?
     }
 }
 ```
@@ -166,7 +166,11 @@ print("Fade In Completed")
 fade.Fading.Out.Completed:Wait()
 print("Fade Out Completed")
 ```
-#
+
+---
+# Input
+---
+
 ## Input:AnyKey() 
 ### RbxScriptConnect that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
 - Escape Key
@@ -190,8 +194,8 @@ print("Pressed a key for the first time")
 
 AnyKey:Connect(Pressed)
 ```
-#
-## Input:GetPlatform() -> string 
+
+## Input:GetPlatform() -> "Mobile"|"Keyboard"|"PC" 
 ### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
 ```luau
 local Platform = ConikkUtills.Input:GetPlatform()
@@ -202,7 +206,7 @@ else
     print("User is not mobile")
 end
 ```
-#
+
 ## Input:IsController() -> boolean 
 ### Checks if Gamepad is connected and enabled
 ```luau
@@ -233,7 +237,10 @@ end
 - GamepadEnabled : "Gamepad"
 - TouchEnabled : "Touch"
 
-## ContextActionUtility
+---
+# ContextActionUtility
+---
+
 #### For in depth documentation and other infomation vist this [devfourm post](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
 
 ### Functions
@@ -277,15 +284,18 @@ local Equipped = ConikkUtills.ContextActionUtility.LocalToolEquipped()
 local Unequipped = ConikkUtills.ContextActionUtility.LocalToolUnequipped()
 ```
 
-### Refrences:
+### References:
 ```luau
 Equipped:Connect()
 Equipped:Wait()
 Equipped:ConnectParallel()
 Equipped:Once()
 ```
-#
-## LightingAPIProfile
+
+---
+# LightingAPIProfile
+---
+
 - For in depth documentation and other infomation vist this [github repository](https://github.com/hexa0/lighting-profile)
 - This was made by my friend Hexa and I integraded it into my system, it's really good for changing lighting in game very easily
 ### Functions
@@ -295,7 +305,9 @@ ConikkUtills.LightingProfile:ApplyProfile()
 ```luau
 ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting()
 ```
-#
+
+---
+
 # Credits
 - [ContextActionUtility](https://devforum.roblox.com/t/easy-mobile-buttons-contextactionutility/804219)
 - [DeviceMaid](https://create.roblox.com/store/asset/7907463241/Device-Maid-Support-Module?externalSource=www)
