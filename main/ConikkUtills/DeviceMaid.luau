@@ -3,6 +3,8 @@ local RunService = game:GetService("RunService");
 local UserInputService = game:GetService("UserInputService")
 
 -- || Variables
+local _InputLookupTableObject = script.Parent.DeviceMaidObjects.InputLookupTable --make this path to wherever you put the ModuleScript at
+
 local maid = {};
 
 function maid:getEnabled()
@@ -28,6 +30,34 @@ function maid:getPlatformApproximate()
 		"Console"
 		else
 		"Compound"
+end
+
+do --console platform detection
+	local currentInput = "nil"
+	
+	UserInputService.InputBegan:Connect(function(inputObj)
+		if not UserInputService.GamepadEnabled then
+			currentInput = "None"
+			return
+		end
+		
+		local lookupTable = require(_InputLookupTableObject)
+		if not lookupTable.GamepadInput[inputObj.KeyCode] then return end
+		
+		local stringForKeyCode = UserInputService:GetStringForKeyCode(inputObj.KeyCode)
+		
+		if lookupTable.XboxStrings[stringForKeyCode] then
+			currentInput = "Xbox"
+		elseif lookupTable.PlayStationStrings[stringForKeyCode] then
+			currentInput = "PlayStation"
+		elseif currentInput == "None" then
+			currentInput = "Other"
+		end
+	end)
+	
+	function maid:getConsolePlatform(): "nil"|"None"|"Other"|"Xbox"|"PlayStation"
+		return currentInput
+	end
 end
 
 function maid:isController()
