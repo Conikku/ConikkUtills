@@ -20,16 +20,14 @@ function maid:getPlatformApproximate()
 	local isConsole = result.Gamepad and (not result.Touch) and (not result.Keyboard)
 	local isPC = result.Keyboard and (not result.Touch) and (not result.Gamepad)
 	
-	if isMobile then
-		return "Mobile"
-	elseif isConsole then
-		return "Console"
-	elseif isPC then
-		return "PC"
-	else
-		return "Compound"
-	end
-
+	return if isMobile then
+		"Mobile"
+		elseif isPC then
+		"PC"
+		elseif isConsole then
+		"Console"
+		else
+		"Compound"
 end
 
 function maid:isController()
