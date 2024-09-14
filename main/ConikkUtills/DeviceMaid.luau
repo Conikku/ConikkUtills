@@ -13,19 +13,21 @@ function maid:getEnabled()
 	}
 end
 
-function maid:getPlatform()
-	local res = maid:getEnabled();
-
-	--local isPC = res.Keyboard or (res.Keyboard and res.Touch)
-	local isMobile = res.Touch and not res.Gamepad and not res.Keyboard
-	local isConsole = res.Gamepad and not res.Touch and not res.Keyboard
-
+function maid:getPlatformApproximate()
+	local result = maid:getEnabled();
+	
+	local isMobile = result.Touch and (not result.Gamepad) and (not result.Keyboard)
+	local isConsole = result.Gamepad and (not result.Touch) and (not result.Keyboard)
+	local isPC = result.Keyboard and (not result.Touch) and (not result.Gamepad)
+	
 	if isMobile then
 		return "Mobile"
 	elseif isConsole then
-		return "Keyboard"
-	else
+		return "Console"
+	elseif isPC then
 		return "PC"
+	else
+		return "Compound"
 	end
 
 end
