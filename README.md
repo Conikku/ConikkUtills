@@ -215,7 +215,7 @@ print("Pressed a key for the first time")
 AnyKey:Connect(Pressed)
 ```
 
-## Input:GetPlatform()<br><br> → "Mobile" | "Keyboard" | "PC" 
+## Input:GetPlatformApproximate()<br><br> → "Mobile" | "Console" | "PC" | "Compound" 
 ### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
 ```luau
 local Platform = ConikkUtills.Input:GetPlatform()
