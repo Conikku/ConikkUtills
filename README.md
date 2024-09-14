@@ -216,9 +216,9 @@ AnyKey:Connect(Pressed)
 ```
 
 ## Input:GetPlatformApproximate()<br><br> → "Mobile" | "Console" | "PC" | "Compound" 
-### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
+### Tries to get the approximate platform, can't tell if player is on PlayStation or Xbox, but will say they are a console user.<br> If the user has multiple types of controls enabled, then it will return "Compound". For example, if the user has a phone with a keyboard/gamepad plugged into it, it will return "Compound".
 ```luau
-local Platform = ConikkUtills.Input:GetPlatform()
+local Platform = ConikkUtills.Input:GetPlatformApproximate()
 
 if Platform == "Mobile" then
     print("User is on mobile")
