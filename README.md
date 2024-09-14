@@ -251,11 +251,11 @@ else
 end
 ```
 #
-## Input:GetEnabled()<br><br> → contentTable*
+## Input:GetEnabled()<br><br> → infoTable
 ### Returns a table that contains information on what types of controls are being used
 ```luau
-contentTable* = {
-    Gamepad: boolean, --if true that specific control type is being used
+infoTable = {
+    Gamepad: boolean, --if true, a gamepad is connected to the device the user is using. this goes for the rest of the elements in the table
     Touch: boolean,
     Keyboard: boolean
 }
