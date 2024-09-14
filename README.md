@@ -227,7 +227,7 @@ else
 end
 ```
 
-## Input:GetConsolePlatform()<br><br> → "None" | "Other" | "PlayStation" | "Xbox"
+## Input:GetConsolePlatformApproximate()<br><br> → "None" | "Other" | "PlayStation" | "Xbox"
 ### Tries* to get the current console platform being used.<br><br> *Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used the needed keys to approximate this will result in the function returning "Other" and not the appropriate platform name
 ```luau
 local Platform = ConikkUtills.Input:GetConsolePlatform()
