@@ -192,7 +192,7 @@ print("Fade Out Completed")
 
 ## Input:AnyKey() <br><br> → RBXScriptSignal
 
-### RbxScriptConnect that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
+### Returns a signal that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
 - Escape Key
 - Pause Key
 - Thumbstick1
