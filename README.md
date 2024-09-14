@@ -319,10 +319,10 @@ Equipped:Once()
 - This was made by my friend Hexa and I integraded it into my system, it's really good for changing lighting in game very easily
 ### Functions
 ```luau
-ConikkUtills.LightingProfile:ApplyProfile()
+ConikkUtills.LightingProfile:ApplyProfile(Configuration | LightingProfileData)
 ```
 ```luau
-ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting()
+ConikkUtills.LightingProfile:CreateProfileInstanceFromCurrentLighting() -> Configuration
 ```
 
 ---
