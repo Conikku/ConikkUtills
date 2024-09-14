@@ -19,7 +19,10 @@ local ConikkUtills = require(game:GetService("ReplicatedStorage").ConikkUtills)
 ```
 
 # Documentation
-## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize) | Get a Player's Thumbnail
+---
+
+## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize)
+### Get a Player's Thumbnail
 
 ```luau
 local Player = game:GetService("Players").LocalPlayer
@@ -28,14 +31,20 @@ local Decal = workspace.Part.Decal
 Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 ```
 
-## TurnPositive(n : number) | Returns a negative number as positive
+---
+# Number
+---
+
+## Number:TurnPositive(number)
+### Returns a negative number as positive
 
 ```luau
 print(ConikkUtills:TurnPositive(-8)) --> 8
 print(ConikkUtills:TurnPositive(27)) --> 27
 ```
 
-## NumbersMagnitude(N1 : number, N2 : number) | Returns the magnitude length of two numbers
+## Number:NumbersMagnitude(number, number)
+### Returns the magnitude length of two numbers
 
 ```luau
 print(ConikkUtills:NumbersMagnitude(1, 80)) --> 79
@@ -43,7 +52,8 @@ print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 ```
 
-## Round:ToNearestInteger(n : number) | Round a decimal to the nearest integer
+## Number:ToNearestInteger(number)
+### Round a decimal to the nearest integer
 
 ```luau
 print(ConikkUtills.Round:ToNearestInteger(0.365)) --> 0
@@ -51,7 +61,8 @@ print(ConikkUtills.Round:ToNearestInteger(0.683)) --> 1
 print(ConikkUtills.Round:ToNearestInteger(0.975)) --> 1
 ```
 
-## Round:ToFarthestInteger(n : number) | Round a decimal to the farthest integer
+## Number:ToFarthestInteger(n : number)
+### Round a decimal to the farthest integer
 
 ```luau
 print(ConikkUtills.Round:ToFarthestInteger(0.365)) --> -0
@@ -59,7 +70,12 @@ print(ConikkUtills.Round:ToFarthestInteger(0.683)) --> 1
 print(ConikkUtills.Round:ToFarthestInteger(0.975)) --> 1
 ```
 
-## StudioOnly:Print(string : string) | Prints in Studio only
+---
+# StudioOnly
+---
+
+## StudioOnly:Print(string)
+### Prints in Studio only
 
 ```luau
 local Num = math.random(1, 2)
@@ -71,7 +87,8 @@ else
 end
 ```
 
-## StudioOnly:Warn(string : string) | Warns in Studio only
+## StudioOnly:Warn(string)
+### Warns in Studio only
 
 ```luau
 local Num = math.random(1, 2)
@@ -83,7 +100,8 @@ else
 end
 ```
 
-## StudioOnly:Error(string : string, level : number?) | Errors in Studio only
+## StudioOnly:Error(string, level: number?)
+### Errors in Studio only
 
 ```luau
 local Num = math.random(1, 2)
@@ -94,13 +112,29 @@ else
     ConikkUtills.StudioOnly:Error("I only error in Studio >:3")
 end
 ```
-## ScreenEffects:Fade():Start:(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?, Color : Color3?)
+
+---
+# ScreenEffects
+---
+## ScreenEffects:Fade() || ScreenEffects:WipeFade()
+### Returns the "FadeScreen" or "FadeWipeTransition" module
+```luau
+FadeScreen || FadeWipeTransition = {
+    Start: function,
+    Fading: {
+        In: Tween?,
+        Out: Tween?
+    }
+}
+```
+
+## ScreenFade:Start(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?, Color : Color3?)
 - If ```InSpeed``` is set to ```nil```, the fade in will **instantly** make the screen black, then fade out
 - If ```OutSpeed``` is set to ```nil```, then it will **instantly** get rid of the fade once it **completes**
 - If ```DisplayOrder``` is ```nil```, its set to **99999** by default
 - If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
 
-## ScreenEffects:WipeFade():Start:(Speed : number?, DisplayOrder : number?, Color : Color3?)
+## FadeWipeTransition:Start(Speed : number?, DisplayOrder : number?, Color : Color3?)
 - If ```Speed``` is set to ```nil```, by default it will be (0.65 x 2)
 - If ```DisplayOrder``` is ```nil```, its set to **99999** by default
 - If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
