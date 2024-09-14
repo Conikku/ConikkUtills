@@ -52,22 +52,41 @@ print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 ```
 
-## Number:ToNearestInteger(number)
+## Number:CarryNumberToNewRange(number, oldRange: NumberRange, newRange: NumberRange) -> number
+### Carry a numbers percentage withing a range to a new range 
+#### NOTE: "oldRange" and "newRange" can be tables of ` {Min: number, Max: number} `
+
+```luau
+local oldRange = NumberRange.new(0, 10)
+local newRange = {Min = 0, Max = 50} --Both can be a NumberRange and a table
+
+local number1 = 5
+local number2 = 8
+local number3 = 1
+
+print(
+    ConikkUtills.Number:CarryNumberToNewRange(number1, oldRange, newRange), --> 25
+    ConikkUtills.Number:CarryNumberToNewRange(number2, oldRange, newRange), --> 40
+    ConikkUtills.Number:CarryNumberToNewRange(number3, oldRange, newRange)  --> 5
+)
+```
+
+## Number:RoundToNearestInteger(number)
 ### Round a decimal to the nearest integer
 
 ```luau
-print(ConikkUtills.Round:ToNearestInteger(0.365)) --> 0
-print(ConikkUtills.Round:ToNearestInteger(0.683)) --> 1
-print(ConikkUtills.Round:ToNearestInteger(0.975)) --> 1
+print(ConikkUtills.Number:RoundToNearestInteger(0.365)) --> 0
+ print(ConikkUtills.Number:RoundToNearestInteger(0.683)) --> 1
+print(ConikkUtills.Number:RoundToNearestInteger(0.975)) --> 1
 ```
 
-## Number:ToFarthestInteger(n : number)
+## Number:RoundToFarthestInteger(n : number)
 ### Round a decimal to the farthest integer
 
 ```luau
-print(ConikkUtills.Round:ToFarthestInteger(0.365)) --> -0
-print(ConikkUtills.Round:ToFarthestInteger(0.683)) --> 1
-print(ConikkUtills.Round:ToFarthestInteger(0.975)) --> 1
+print(ConikkUtills.Number:RoundToFarthestInteger(0.365)) --> -0
+print(ConikkUtills.Number:RoundToFarthestInteger(0.683)) --> 1
+print(ConikkUtills.Number:RoundToFarthestInteger(0.975)) --> 1
 ```
 
 ---
