@@ -131,8 +131,8 @@ do
 		ClientOnlyCheck() return AnyKey:Get()
 	end
 
-	function ConikkUtills.Input:GetPlatform()
-		ClientOnlyCheck() return DeviceMaid:getPlatform()
+	function ConikkUtills.Input:GetPlatformApproximate()
+		ClientOnlyCheck() return DeviceMaid:getPlatformApproximate()
 	end
 
 	function ConikkUtills.Input:IsController()
