@@ -33,8 +33,11 @@ function maid:getPlatformApproximate()
 end
 
 do --console platform detection
-	local currentInput = "nil"
-	
+	local currentInput = if UserInputService.GamepadEnabled then
+		"Other"
+		else
+		"None"
+
 	UserInputService.InputBegan:Connect(function(inputObj)
 		if not UserInputService.GamepadEnabled then
 			currentInput = "None"
