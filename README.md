@@ -227,6 +227,39 @@ else
 end
 ```
 
+## Input:GetConsolePlatform()<br><br> → "None" | "Other" | "PlayStation" | "Xbox"
+### Tries* to get the current console platform being used.<br><br> *Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used the needed keys to approximate this will result in the function returning "Other" and not the appropriate platform name
+```luau
+local Platform = ConikkUtills.Input:GetConsolePlatform()
+
+if Platform == "PlayStation" then
+    print("Is using PlayStation controller")
+elseif Platform == "Xbox" then
+    print("Is using Xbox controller")
+end
+```
+
+### Here are the keys needed to be pressed in order to do proper platform detection, you could use these in a startup menu of sorts and ask the player to input one of these buttons to quickly declare their console platform.
+```luau
+NeededInputs = {
+    Enum.KeyCode.ButtonA,
+    Enum.KeyCode.ButtonB,
+    Enum.KeyCode.ButtonX,
+    Enum.KeyCode.ButtonY,
+
+    Enum.KeyCode.ButtonL1,
+    Enum.KeyCode.ButtonL2,
+    Enum.KeyCode.ButtonL3,
+
+    Enum.KeyCode.ButtonR1,
+    Enum.KeyCode.ButtonR2,
+    Enum.KeyCode.ButtonR3,
+
+    Enum.KeyCode.ButtonStart,
+    Enum.KeyCode.ButtonSelect,
+}
+```
+
 ## Input:IsController()<br><br> → boolean 
 ### Checks if Gamepad is connected and enabled
 ```luau
