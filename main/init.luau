@@ -146,6 +146,10 @@ do
 	function ConikkUtills.Input:GetEnabled()
 		ClientOnlyCheck() return DeviceMaid:getEnabled()
 	end
+
+	function ConikkUtills.Input:GetConsolePlatform(): "nil"|"None"|"Other"|"Xbox"|"PlayStation"
+		ClientOnlyCheck() return DeviceMaid:getConsolePlatform()
+	end
 end
 
 --== Context Action Utility wrapper
