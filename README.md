@@ -21,7 +21,7 @@ local ConikkUtills = require(game:GetService("ReplicatedStorage").ConikkUtills)
 # Documentation
 ---
 
-## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize)
+## GetPlayerThumbnail(Player, Enum.ThumbnailType, Enum.ThumbnailSize)<br><br> → contentID: string, isUsable: boolean
 ### Get a Player's Thumbnail
 
 ```luau
@@ -35,7 +35,7 @@ Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadS
 # Number
 ---
 
-## Number:TurnPositive(number)
+## Number:TurnPositive(number)<br><br> → number
 ### Returns a negative number as positive
 
 ```luau
@@ -43,7 +43,7 @@ print(ConikkUtills:TurnPositive(-8)) --> 8
 print(ConikkUtills:TurnPositive(27)) --> 27
 ```
 
-## Number:NumbersMagnitude(number, number)
+## Number:NumbersMagnitude(number, number)<br><br> → number
 ### Returns the magnitude length of two numbers
 
 ```luau
@@ -52,7 +52,7 @@ print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
 print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
 ```
 
-## Number:CarryNumberToNewRange(number, oldRange: NumberRange, newRange: NumberRange) -> number
+## Number:CarryNumberToNewRange(number, oldRange: NumberRange, newRange: NumberRange)<br><br> → number
 ### Carry a numbers percentage withing a range to a new range 
 #### NOTE: "oldRange" and "newRange" can be tables of ` {Min: number, Max: number} `
 
@@ -71,16 +71,16 @@ print(
 )
 ```
 
-## Number:RoundToNearestInteger(number)
+## Number:RoundToNearestInteger(number)<br><br> → number
 ### Round a decimal to the nearest integer
 
 ```luau
 print(ConikkUtills.Number:RoundToNearestInteger(0.365)) --> 0
- print(ConikkUtills.Number:RoundToNearestInteger(0.683)) --> 1
+print(ConikkUtills.Number:RoundToNearestInteger(0.683)) --> 1
 print(ConikkUtills.Number:RoundToNearestInteger(0.975)) --> 1
 ```
 
-## Number:RoundToFarthestInteger(n : number)
+## Number:RoundToFarthestInteger(n : number)<br><br> → number
 ### Round a decimal to the farthest integer
 
 ```luau
@@ -135,7 +135,7 @@ end
 ---
 # ScreenEffects
 ---
-## ScreenEffects:Fade() || ScreenEffects:WipeFade()
+## ScreenEffects:Fade() || ScreenEffects:WipeFade()<br><br> → FadeScreen || FadeWipeTransition
 ### Returns the "FadeScreen" or "FadeWipeTransition" module
 ```luau
 FadeScreen || FadeWipeTransition = {
@@ -147,13 +147,13 @@ FadeScreen || FadeWipeTransition = {
 }
 ```
 
-## ScreenFade:Start(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?, Color : Color3?)
+## FadeScreen:Start(InSpeed : number?, OutSpeed : number?, DisplayOrder : number?, Color : Color3?) <br><br> → {In: Tween, Out: Tween}
 - If ```InSpeed``` is set to ```nil```, the fade in will **instantly** make the screen black, then fade out
 - If ```OutSpeed``` is set to ```nil```, then it will **instantly** get rid of the fade once it **completes**
 - If ```DisplayOrder``` is ```nil```, its set to **99999** by default
 - If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
 
-## FadeWipeTransition:Start(Speed : number?, DisplayOrder : number?, Color : Color3?)
+## FadeWipeTransition:Start(Speed : number?, DisplayOrder : number?, Color : Color3?) <br><br> → {In: Tween, Out: Tween}
 - If ```Speed``` is set to ```nil```, by default it will be (0.65 x 2)
 - If ```DisplayOrder``` is ```nil```, its set to **99999** by default
 - If ```Color``` is ```nil```, its set to **Color3.FromRGB(0, 0, 0) [Color Black]** by default
@@ -190,7 +190,8 @@ print("Fade Out Completed")
 # Input
 ---
 
-## Input:AnyKey() 
+## Input:AnyKey() <br><br> → RBXScriptSignal
+
 ### RbxScriptConnect that can be used when any key is pressed, works on all devices and excludes non touch and keycode type inputs and keycodes resigned for roblox's escape menu, this includes:
 - Escape Key
 - Pause Key
@@ -214,7 +215,7 @@ print("Pressed a key for the first time")
 AnyKey:Connect(Pressed)
 ```
 
-## Input:GetPlatform() -> "Mobile"|"Keyboard"|"PC" 
+## Input:GetPlatform()<br><br> → "Mobile" | "Keyboard" | "PC" 
 ### Tries to get aproximate platform, sadly can't tell if player is on PlayStation or Xbox, but will say they are a console user
 ```luau
 local Platform = ConikkUtills.Input:GetPlatform()
@@ -226,7 +227,7 @@ else
 end
 ```
 
-## Input:IsController() -> boolean 
+## Input:IsController()<br><br> → boolean 
 ### Checks if Gamepad is connected and enabled
 ```luau
 local IsController = ConikkUtills.Input:IsController()
@@ -237,8 +238,8 @@ else
     print("No controller connected")
 end
 ```
-#
-## Input:IsVR() -> boolean
+
+## Input:IsVR()<br><br> → boolean
 ### Checks if user is in VR
 ```luau
 local IsVR = ConikkUtills.Input:IsVR()
@@ -250,11 +251,15 @@ else
 end
 ```
 #
-## Input:GetEnabled() -> string
-### Returns main UserInputType control that is Enabled, this includes:
-- KeyboardEnabled : "Keyboard"
-- GamepadEnabled : "Gamepad"
-- TouchEnabled : "Touch"
+## Input:GetEnabled()<br><br> → contentTable*
+### Returns a table that contains information on what types of controls are being used
+```luau
+contentTable* = {
+    Gamepad: boolean, --if true that specific control type is being used
+    Touch: boolean,
+    Keyboard: boolean
+}
+```
 
 ---
 # ContextActionUtility
