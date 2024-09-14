@@ -147,7 +147,7 @@ do
 		ClientOnlyCheck() return DeviceMaid:getEnabled()
 	end
 
-	function ConikkUtills.Input:GetConsolePlatform(): "nil"|"None"|"Other"|"Xbox"|"PlayStation"
+	function ConikkUtills.Input:GetConsolePlatformApproximate(): "None"|"Other"|"Xbox"|"PlayStation"
 		ClientOnlyCheck() return DeviceMaid:getConsolePlatform()
 	end
 end
