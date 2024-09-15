@@ -51,8 +51,8 @@ local PlaystationStringForKeycodes = {
 	ButtonR1 = true, -- KeyCode.ButtonR1
 	ButtonR2 = true, -- KeyCode.ButtonR2
 	ButtonR3 = true, -- KeyCode.ButtonR3
-	ButtonOptions = true, -- KeyCode.ButtonStart
 
+	ButtonOptions = true, -- KeyCode.ButtonStart
 	ButtonTouchpad = true, -- KeyCode.ButtonSelect 
 	ButtonShare = true, -- KeyCode.ButtonSelect 
 }
