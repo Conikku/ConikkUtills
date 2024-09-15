@@ -62,7 +62,7 @@ ConikkUtills.ScreenEffects = { }
 --== Other
 function ConikkUtills:GetPlayerThumbnail(playerIdentifier : Player|number, thumbnailType : Enum.ThumbnailType, thumbnailSize : Enum.ThumbnailSize): (string?, boolean?)
 	local userId = if type(playerIdentifier) == "number" then playerIdentifier else playerIdentifier.UserId
-	local content, isReady = Players:GetUserThumbnailAsync(userId, ThumbnailType, ThumbnailSize)
+	local content, isReady = Players:GetUserThumbnailAsync(userId, thumbnailType, thumbnailSize)
 
 	return content, isReady
 end
