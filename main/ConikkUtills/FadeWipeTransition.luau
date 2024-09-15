@@ -5,14 +5,17 @@
 
 local FadeTransition = {}
 
+local ObjectsDirectory = script.Parent.FadeWipeTransitionObjects --make this path to wherever you put these objects into
+
 local PlayerGui = game:GetService("Players").LocalPlayer.PlayerGui
 local TweenService = game:GetService("TweenService")
+
+local FadeEffectOriginal = ObjectsDirectory.Fade
 
 FadeTransition.Fading = { }
 
 function FadeTransition:Start(Speed : number | nil, DisplayOrder : number | nil, Color : Color3 | nil)
 	task.spawn(function()
-
 		if Speed == nil then
 			Speed = 0.65
 		end
@@ -21,7 +24,7 @@ function FadeTransition:Start(Speed : number | nil, DisplayOrder : number | nil,
 			DisplayOrder = 99999999
 		end
 
-		local FadeEffect = script.Fade:Clone()
+		local FadeEffect = FadeEffectOriginal:Clone()
 		FadeEffect.DisplayOrder = DisplayOrder
 		FadeEffect.Parent = PlayerGui
 		
