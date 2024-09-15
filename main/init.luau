@@ -131,7 +131,7 @@ do
 		ClientOnlyCheck() return AnyKey:Get()
 	end
 
-	function ConikkUtills.Input:GetPlatformApproximate()
+	function ConikkUtills.Input:GetPlatformApproximate(): "Mobile"|"Console|"PC"|"Compound"
 		ClientOnlyCheck() return DeviceMaid:getPlatformApproximate()
 	end
 
