@@ -3,7 +3,9 @@ local RunService = game:GetService("RunService");
 local UserInputService = game:GetService("UserInputService")
 
 -- || Variables
-local _InputLookupTableObject = script.Parent.DeviceMaidObjects.InputLookupTable --make this path to wherever you put the ModuleScript at
+local ObjectsDirectory = script.Parent.DeviceMaidObjects --make this path to wherever you put these objects into
+
+local inputLookupInstance = ObjectsDirectory.InputLookupTable
 
 local maid = {};
 
@@ -44,7 +46,7 @@ do --console platform detection
 			return
 		end
 		
-		local lookupTable = require(_InputLookupTableObject)
+		local lookupTable = require(inputLookupInstance)
 		if not lookupTable.GamepadInput[inputObj.KeyCode] then return end
 		
 		local stringForKeyCode = UserInputService:GetStringForKeyCode(inputObj.KeyCode)
