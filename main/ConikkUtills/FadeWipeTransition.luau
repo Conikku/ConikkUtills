@@ -5,7 +5,7 @@
 
 local FadeTransition = {}
 
-local ObjectsDirectory = script.Parent.FadeWipeTransitionObjects --make this path to wherever you put these objects into
+local ObjectsDirectory = script.Parent.FadeObjects --make this path to wherever you put these objects into
 
 local PlayerGui = game:GetService("Players").LocalPlayer.PlayerGui
 local TweenService = game:GetService("TweenService")
