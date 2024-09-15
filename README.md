@@ -203,7 +203,7 @@ print("Fade Out Completed")
 
 ### Here's a script example to show what it can be used for, I usually use this for title screens
 ```luau
-local AnyKey = ConikkUtills.Input:AnyKey
+local AnyKey = ConikkUtills.Input:AnyKey()
 
 function Pressed()
     print("Pressed a key")
