@@ -39,17 +39,17 @@ Decal.Texture = ConikkUtills:GetPlayerThumbnail(Player, Enum.ThumbnailType.HeadS
 ### Returns a negative number as positive
 
 ```luau
-print(ConikkUtills:TurnPositive(-8)) --> 8
-print(ConikkUtills:TurnPositive(27)) --> 27
+print(ConikkUtills.Number:TurnPositive(-8)) --> 8
+print(ConikkUtills.Number:TurnPositive(27)) --> 27
 ```
 
 ## Number:NumbersMagnitude(number, number)<br><br> → number
 ### Returns the magnitude length of two numbers
 
 ```luau
-print(ConikkUtills:NumbersMagnitude(1, 80)) --> 79
-print(ConikkUtills:NumbersMagnitude(34, 130)) --> 96
-print(ConikkUtills:NumbersMagnitude(-17, 421)) --> 438
+print(ConikkUtills.Number:NumbersMagnitude(1, 80)) --> 79
+print(ConikkUtills.Number:NumbersMagnitude(34, 130)) --> 96
+print(ConikkUtills.Number:NumbersMagnitude(-17, 421)) --> 438
 ```
 
 ## Number:CarryNumberToNewRange(number, oldRange: NumberRange, newRange: NumberRange)<br><br> → number
