@@ -40,11 +40,11 @@ end
 
 -- Module Only Functions
 function ClientOnlyCheck()
-	if IsServer then warn("This function of ConikkUtills can only be called on the client") return end
+	assert(not IsServer, "This function of ConikkUtills can only be called on the client")
 end
 
 function ServerOnlyCheck()
-	if IsServer == false then warn("This function of ConikkUtills can only be called on the server") return end
+	assert(IsServer, "This function of ConikkUtills can only be called on the server")
 end
 
 -----------------
