@@ -12,7 +12,6 @@ FadeScreen.Fading = { }
 
 function FadeScreen:Start(InSpeed : number | nil, OutSpeed : number | nil, DisplayOrder : number | nil, Color : Color3 | nil)
 	task.spawn(function()
-		
 		DisplayOrder = DisplayOrder or 99999
 		
 		local FadeEffect = Instance.new("ScreenGui", PlayerGui)
