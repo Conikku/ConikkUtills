@@ -40,6 +40,18 @@ do --console platform detection
 		else
 		"None"
 
+	--this ↓ block of code could be uncommented for immeadieate platform detection but i wont be putting it in yet
+	--[[ 
+	if UserInputService.GamepadEnabled then
+		local lookupTable = require(inputLookupInstance)
+		local stringForKeyCode = UserInputService:GetStringForKeyCode(Enum.KeyCode.ButtonA)
+
+		currentInput = if lookupTable.XboxStrings[stringForKeyCode] then ("Xbox")
+			elseif lookupTable.PlayStationStrings[stringForKeyCode] then ("PlayStation")
+			else ("Other")
+	end
+	]]
+
 	UserInputService.InputBegan:Connect(function(inputObj)
 		if not UserInputService.GamepadEnabled then
 			currentInput = "None"
