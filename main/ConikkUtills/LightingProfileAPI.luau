@@ -12,12 +12,14 @@ local Lighting = game:GetService("Lighting")
 local Terrain = workspace:FindFirstChildOfClass("Terrain")
 local LocalizationService = game:GetService("LocalizationService")
 
+local ObjectsDirectory = script.Parent.LightingProfileAPIObjects --make this path to wherever you put these objects into
+
 local LightingProfileHandler = {}
-LightingProfileHandler._CLASSES = require(script.classes)
-LightingProfileHandler._LANG = require(script.lang)
+LightingProfileHandler._CLASSES = require(ObjectsDirectory.classes)
+LightingProfileHandler._LANG = require(ObjectsDirectory.lang)
 LightingProfileHandler._IS_PLUGIN = false
 
-local types = require(script.types)
+local types = require(ObjectsDirectory.types)
 
 export type ProfileData = types.ProfileData
 
@@ -34,11 +36,11 @@ function LightingProfileHandler:DecodeProfileDataFromInstance(profileObj: Config
 		for key, value in pairs(profileObj:GetAttributes()) do
 			profile[key] = value
 		end
-
+	
 		for _, child in pairs(profileObj:GetChildren()) do
 			profile[child.Name] = self:DecodeProfileDataFromInstance(child)
 		end
-
+	
 		return profile :: ProfileData
 	else
 		error("decode failed")
@@ -123,7 +125,7 @@ function LightingProfileHandler:ApplyProfile(profile: Configuration | ProfileDat
 
 	if decoded.Clouds then
 		local cloudsIntance = Instance.new("Clouds",Terrain)
-
+		
 		for key: string, value in pairs(decoded.Clouds) do
 			cloudsIntance[key] = value
 		end
