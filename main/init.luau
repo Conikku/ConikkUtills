@@ -5,7 +5,7 @@
 	For Documentation:
   	https://github.com/Conikku/ConikkUtills
 	
-	Last Updated: 00/00/0000
+	Last Updated: 09/15/2024
 ]]
 
 local Players = game:GetService("Players")
