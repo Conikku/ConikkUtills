@@ -29,11 +29,9 @@ if IsServer == false then
 	AnyKey = require(Directory.AnyKey)
 	DeviceMaid = require(Directory.DeviceMaid)
 	
-	if IsStudio == false or (RunService:IsRunMode() == true) then --This breaks with command bars this is why it was added, could be deleted
-		Fade = require(Directory.FadeScreen)
-		FadeWipe = require(Directory.FadeWipeTransition)
-		ContextActionUtility = require(Directory.ContextActionUtility)
-	end
+	Fade = require(Directory.FadeScreen)
+	FadeWipe = require(Directory.FadeWipeTransition)
+	ContextActionUtility = require(Directory.ContextActionUtility)
 end
 
 -----------------
