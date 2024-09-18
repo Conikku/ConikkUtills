@@ -6,7 +6,7 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 [![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://conikku.lao.ooo/)
 
 ### ⚠️**NOTICE**⚠️
-### This module uses some open source modules on roblox from other creators of the community which will **NOT** have their code included on this github page, they will be in the module on the roblox site
+### This module uses some open source modules on roblox from other creators of the community! Creators will be credited in the according scripts.
 
 
 # Installation
