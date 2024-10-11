@@ -1,4 +1,4 @@
-local FindConsolePlatformImmediate = true --Set this to false if old behaviour is wanted →
+local FindConsolePlatformImmediate = true --Set this to false if old behaviour is wanted ↓
 --[[
 	OLD BEHAVIOUR:
 	Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used
