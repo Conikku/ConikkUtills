@@ -228,9 +228,12 @@ end
 ```
 
 ## Input:GetConsolePlatformApproximate()<br><br> → "None" | "Other" | "PlayStation" | "Xbox"
-### Tries* to get the current console platform being used.<br><br> *Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used the needed keys to approximate this will result in the function returning "Other" and not the appropriate platform name
+### Tries* to get the current console platform being used.
+
+~~*Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used the needed keys to approximate this will result in the function returning "Other" and not the appropriate platform name~~
+### ↑ This has been scrapped in favor of the platform being found immediately via performing `GetStringForKeyCode` for `ButtonA`, if this causes any problems it can be disabled with setting `FindConsolePlatformImmediate` (found in "DeviceMaid" script, line 1) to false. 
 ```luau
-local Platform = ConikkUtills.Input:GetConsolePlatform()
+local Platform = ConikkUtills.Input:GetConsolePlatformApproximate()
 
 if Platform == "PlayStation" then
     print("Is using PlayStation controller")
