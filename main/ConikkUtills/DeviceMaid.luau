@@ -1,3 +1,9 @@
+local FindConsolePlatformImmediate = true --Set this to false if old behaviour is wanted → [[
+	OLD BEHAVIOUR:
+	Please note that if the user is either using PlayStation or Xbox controllers but has NOT yet inputted any inputs OR has not yet used
+	the needed keys to approximate this will result in the function returning "Other" and not the appropriate platform name
+]]
+
 -- || Services
 local RunService = game:GetService("RunService");
 local UserInputService = game:GetService("UserInputService")
@@ -39,18 +45,17 @@ do --console platform detection
 		"Other"
 		else
 		"None"
-
-	--this ↓ block of code could be uncommented for immeadieate platform detection but i wont be putting it in yet
-	--[[ 
-	if UserInputService.GamepadEnabled then
-		local lookupTable = require(inputLookupInstance)
-		local stringForKeyCode = UserInputService:GetStringForKeyCode(Enum.KeyCode.ButtonA)
-
-		currentInput = if lookupTable.XboxStrings[stringForKeyCode] then ("Xbox")
-			elseif lookupTable.PlayStationStrings[stringForKeyCode] then ("PlayStation")
-			else ("Other")
+	
+	if FindConsolePlatformImmediate then
+		if UserInputService.GamepadEnabled then
+			local lookupTable = require(inputLookupInstance)
+			local stringForKeyCode = UserInputService:GetStringForKeyCode(Enum.KeyCode.ButtonA)
+			
+			currentInput = if lookupTable.XboxStrings[stringForKeyCode] then ("Xbox")
+				elseif lookupTable.PlayStationStrings[stringForKeyCode] then ("PlayStation")
+				else ("Other")
+		end
 	end
-	]]
 
 	UserInputService.InputBegan:Connect(function(inputObj)
 		if not UserInputService.GamepadEnabled then
