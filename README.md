@@ -54,7 +54,9 @@ print(ConikkUtills.Number:NumbersMagnitude(-17, 421)) --> 438
 
 ## Number:CarryNumberToNewRange(number, oldRange: NumberRange, newRange: NumberRange)<br><br> → number
 ### Carry a numbers percentage withing a range to a new range 
-#### NOTE: "oldRange" and "newRange" can be tables of ` {Min: number, Max: number} `
+#### NOTE: `oldRange` and `newRange` can be tables of ` {Min: number, Max: number} `
+
+> **IMPORTANT**: Recently a [`map`](https://rfcs.luau.org/function-math-map.html) method was implemented into the [math](https://luau.org/library#math-library) library of luau, this method achieves the same behaviour at better performance. It is recommended to use [`math.map`](https://rfcs.luau.org/function-math-map.html) instead of `CarryNumberToNewRange`
 
 ```luau
 local oldRange = NumberRange.new(0, 10)
