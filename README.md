@@ -3,7 +3,7 @@ My own personal LUAU utility module I use in almost all of my games, It's very b
 
 [![Roblox](https://conikku.neocities.org/github%20assets/POWERED%20by%20roblox.png)](https://www.roblox.com)
 
-[![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://conikku.lao.ooo/)
+[![Version](https://conikku.neocities.org/github%20assets/ver%20ConikkUtills.svg)](https://www.conikku.com)
 
 ### ⚠️**NOTICE**⚠️
 ### This module uses some open source modules on roblox from other creators of the community! Creators will be credited in the according scripts.
